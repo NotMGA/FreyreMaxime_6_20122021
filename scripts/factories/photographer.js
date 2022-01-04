@@ -1,17 +1,30 @@
 function photographerFactory(data) {
-    const { name, portrait } = data;
+    const { name, portrait , city , country , tagline , price ,id } = data;
 
-    const picture = `assets/photographers/${portrait}`;
+    const picture = `assets/photographers/Photographers ID Photos/${portrait}`;
 
     function getUserCardDOM() {
         const article = document.createElement( 'article' );
+        const idphotographe = id;
+        const a = document.createElement('a');
+        a.href = "/photographer.html?id="+ idphotographe; 
         const img = document.createElement( 'img' );
         img.setAttribute("src", picture)
         const h2 = document.createElement( 'h2' );
         h2.textContent = name;
-        article.appendChild(img);
-        article.appendChild(h2);
+        const text = document.createElement( 'text' );
+        text.textContent = city+","+country ;
+        const text_tagline = document.createElement ('tagline');
+        text_tagline.textContent = tagline;
+        const prix = document.createElement ('prix');
+        prix.textContent = price+ "/Jours";
+        article.appendChild(a);
+        a.appendChild(img);
+        a.appendChild(h2);
+        article.appendChild(text);
+        article.appendChild(text_tagline); 
+        article.appendChild(prix);
         return (article);
     }
-    return { name, picture, getUserCardDOM }
+    return { name, picture, city , getUserCardDOM }
 }
