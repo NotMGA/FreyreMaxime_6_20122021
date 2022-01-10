@@ -1,5 +1,5 @@
 function mediafactory (data){
-    const {image , photographerId , video , title} = data ;
+    const {image , photographerId , video , title ,likes} = data ;
     const picture = `assets/photographers/${photographerId}/${image}`;
     const movie = `assets/photographers/${photographerId}/${video}`;
     function GetUserMedia (){
@@ -9,7 +9,7 @@ function mediafactory (data){
             const video = document.createElement ('video') ;
             const source = document.createElement('source');
             const a = document.createElement('a');
-            a.href = "";
+            a.href = movie;
 
             video.setAttribute("controls","true");
             source.setAttribute("src",movie);
@@ -28,10 +28,19 @@ function mediafactory (data){
             a.appendChild(img)
             article.appendChild(a);
         }
+        const div = document.createElement('div');
         const h3 = document.createElement('h3');
+        const button = document.createElement('button');
+        const like = document.createElement ('label');
+        button.classList.add('like');
+        like.textContent = likes ;
         h3.textContent = title ;
-        article.appendChild(h3);
+        article.appendChild(div);
+        div.appendChild(h3);
+        div.appendChild(like);
+        div.appendChild(button);
 
+    
         return article;
     }
     return {GetUserMedia} ;

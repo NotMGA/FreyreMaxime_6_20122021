@@ -72,3 +72,49 @@ h1 {
   font-size: 18px;
   color: #d2d2d2;
 }
+
+/* menu deroulant  */
+
+h4 {
+  margin: 0;
+  width: 10%;
+  position: absolute;
+  height: 54px;
+  display: flex;
+  align-items: center;
+}
+.menu {
+  margin-left: 5%;
+  margin-top: 2%;
+  font-weight: 120;
+  font-size: 1.2em;
+  height: 54px;
+  align-items: center;
+}
+.sous_menu {
+  background-color: #901c1c;
+  color: white;
+  width: 10%;
+  display: block;
+  padding-left: 2%;
+  position: absolute;
+  left: 10%;
+  border-radius: 5px;
+}
+.titre,
+.pop,
+.date {
+  padding: 15px;
+}
+
+.sous_menu:hover .cacher {
+  display: block;
+}
+.cacher {
+  display: none;
+}
+
+.border {
+  border-top: solid 1px;
+  margin-right: 25%;
+}

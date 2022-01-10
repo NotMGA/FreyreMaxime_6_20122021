@@ -5,15 +5,39 @@ window.onload = () =>{
     const suivant = document.querySelector(".lightbox_suivant")
     const prec = document.querySelector(".lightbox_precedent")
     const param = new URLSearchParams(document.location.search);
+    const video = lightbox.querySelector(".lightbox_media video");
+    const image = lightbox.querySelector(".lightbox_media img");
     const id_photographe = param.get("id");
     // console.log(lien_media);
 
     for (let media of lien_media){
         media.addEventListener("click", function(e){
             e.preventDefault();
-            const image = lightbox.querySelector(".lightbox_media img");
-            image.src =this.href;
-            lightbox.classList.add("show");
+           let video_image = this.href;
+            if( video_image.includes(".mp4") == true){
+                
+                video.src =this.href;
+                lightbox.classList.add("show");
+                video.style.display="initial";
+                image.style.display ="none";
+               
+                
+            }
+            else{
+                
+                image.src =this.href;
+                lightbox.classList.add("show");
+                image.style.display="initial";
+                video.style.display ="none";
+            }
+           
+            
+            
+           
+            
+            
+            
+            
         });
     }
     fermer.addEventListener("click",function(){
@@ -21,7 +45,7 @@ window.onload = () =>{
     });
 
     suivant.addEventListener("click",function(){
-        
+        const video = lightbox.querySelector(".lightbox_media video");
         const image = lightbox.querySelector(".lightbox_media img");
         const image_actuel = image.src.replace("http://127.0.0.1:5500/assets/photographers/"+id_photographe+"/","");
         
@@ -31,11 +55,40 @@ window.onload = () =>{
             const image_reduit = lien_media[i].href.replace("http://127.0.0.1:5500/assets/photographers/"+id_photographe+"/","");
             // console.log (image_reduit)
             // console.log (image_actuel)
+
             if (image_reduit == image_actuel ){
                 i++;
+                const video_image = lien_media[i].href;
+                // console.log(video_image.includes(".mp4"))
+                if( video_image.includes(".mp4") == true){
+                
+                    video.src =lien_media[i].href;
+                    video.style.display="initial";
+                    image.style.display ="none";
+                    image.src =lien_media[i].href;
+                   
+                    
+                }
+                else{
+                    
+                    image.src =lien_media[i].href;
+                    image.style.display="initial";
+                    video.style.display ="none";
+                }
+                console.log(lien_media);
+                if (i==lien_media.length -1)
+                {
+                    document.querySelector(".lightbox_suivant").style.display ="none";
+                }
+                else
+                {
+                    document.querySelector(".lightbox_suivant").style.display ="initial";
+                    document.querySelector(".lightbox_precedent").style.display ="initial";
+                }
+
                 // const photo_suivante = lien_media[i].href.replace("http://127.0.0.1:5500/assets/photographers/"+id_photographe+"/","");
                 // console.log(photo_suivante)
-                image.src = lien_media[i].href ;
+                // image.src = lien_media[i].href ;
             }
         }
         // let i  = lien_media.findIndex(image => image === this.url)
@@ -46,6 +99,7 @@ window.onload = () =>{
     prec.addEventListener("click",function(){
         
         const image = lightbox.querySelector(".lightbox_media img");
+        const video = lightbox.querySelector(".lightbox_media video");
         const image_actuel = image.src.replace("http://127.0.0.1:5500/assets/photographers/"+id_photographe+"/","");
         
         
@@ -55,11 +109,37 @@ window.onload = () =>{
             // console.log (image_reduit)
             // console.log (image_actuel)
             if (image_reduit == image_actuel ){
-                i++;
+                i-1;
+                const video_image = lien_media[i-1].href;
+                if( video_image.includes(".mp4") == true){
+                
+                    video.src =lien_media[i-1].href;
+                    video.style.display="initial";
+                    image.style.display ="none";
+                    image.src =lien_media[i-1].href;
+                   
+                    
+                }
+                else{
+                    
+                    image.src =lien_media[i-1].href;
+                    image.style.display="initial";
+                    video.style.display ="none";
+                }
+                console.log(i)
+                if (i==1)
+                {
+                    document.querySelector(".lightbox_precedent").style.display ="none";
+                }
+                else
+                {
+                    document.querySelector(".lightbox_suivant").style.display ="initial";
+                    document.querySelector(".lightbox_precedent").style.display ="initial";
+                }
                 // const photo_suivante = lien_media[i].href.replace("http://127.0.0.1:5500/assets/photographers/"+id_photographe+"/","");
                 // console.log(photo_suivante)
                 // console.log(lien_media[i].href);
-                image.src = lien_media[i-2].href ;
+                // image.src = lien_media[i-2].href ;
             }
         }
         // let i  = lien_media.findIndex(image => image === this.url)
