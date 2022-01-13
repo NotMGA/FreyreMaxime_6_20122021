@@ -1,13 +1,12 @@
 // Mettre le code JavaScript lié à la page photographer.html
 const photographe_id_url = (new URL(document.location)).searchParams.get('id') ;
 info_photographe (photographe_id_url);
-
 // const photographe_url = new URL(document.location);
 // const photographe_id_url =photographe_url.searchParams.get('id');
 async function getPhotographers() {
     let response = await fetch('https://raw.githubusercontent.com/NotMGA/Front-End-Fisheye/main/data/photographers.json') 
-    const photographers = await response.json();
-    console.log(photographers);
+   const  photographers = await response.json();
+    // console.log(photographers);
     return photographers; 
 }
 
@@ -35,7 +34,7 @@ for (photographe of photographer_profil){
         document.getElementById("phrase_photographe").innerHTML = info_du_photographe.tagline ;
         document.getElementById('image_photographe').src ="assets/photographers/Photographers ID Photos/"+ info_du_photographe.portrait;
         document.getElementById("contact").innerHTML ="Contactez-moi <br>"+info_du_photographe.name;
-        document.getElementById('prix').innerHTML=info_du_photographe.price +"/jours";
+        document.getElementById('prix').innerHTML=info_du_photographe.price +"€/jour";
         
 
         displaymedia(mediat);
@@ -74,6 +73,44 @@ function total_like (){
     }
 }
 total_like();
+async function select(){
+    const btn = document.querySelector('select')
+    // btn.forEach((cur_option)=>
+    btn.addEventListener("change",trie)
+    // )
+    async function trie(e){
+        // recuperation de l'option date 1  populaire 0 titre 2 
+        const ind = document.querySelector('select').selectedIndex;
+        let populaire = document.querySelectorAll('article > div > label ');
+        getPhotographers()
+        // console.log(btn.options[0].selected);
+        // populaire.sort(function(a,b){return b.value-a.value});
+        // for(i=0 ;i<populaire.length;i++){
+        //     console.log(populaire[i])
+        // }
+        console.log(populaire)
+        
+        console.log(ind);
+    
+    if (ind ==0){
+        populaire.sort((a,b)=>b-a);
+        console.log(populaire);
+
+    }
+    if (ind ==2){
+        const jsonn = JSON.stringify (photographer_media);
+        console.log(photographer_media)
+        photographer_media.sort(function(a,b){
+            return b.title-a.title;
+            
+        })
+        console.log(photographer_media);
+    }
+
+console.log(e);
+    } 
+}
+select();
 
 }
 
@@ -89,17 +126,7 @@ async function displaymedia(media){
     });
 }
 
-function select(){
-    const btn = document.querySelector('select');
-    console.log(btn)
-    // btn.forEach((cur_option)=>
-    btn.addEventListener("change",trie)
-    // )
-    function trie(e){
-console.log(e);
-    } 
-}
-select();
+
 
 
 

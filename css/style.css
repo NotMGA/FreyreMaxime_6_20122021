@@ -4,6 +4,9 @@ body {
   font-family: "DM Sans", sans-serif;
   margin: 0;
 }
+main {
+  margin-bottom: 4%;
+}
 
 header {
   display: flex;
@@ -75,46 +78,36 @@ h1 {
 
 /* menu deroulant  */
 
-h4 {
-  margin: 0;
-  width: 10%;
-  position: absolute;
-  height: 54px;
+.sous_menu {
+  color: black;
   display: flex;
-  align-items: center;
+  padding-left: 8%;
+  border-radius: 5px;
+  height: 40px;
 }
 .menu {
-  margin-left: 5%;
-  margin-top: 2%;
-  font-weight: 120;
-  font-size: 1.2em;
-  height: 54px;
-  align-items: center;
-}
-.sous_menu {
   background-color: #901c1c;
   color: white;
-  width: 10%;
-  display: block;
+  font-size: 1em;
+  border-radius: 5px 5px 0 0;
+  margin-left: 2%;
   padding-left: 2%;
-  position: absolute;
-  left: 10%;
-  border-radius: 5px;
+  padding-right: 2%;
 }
-.titre,
-.pop,
-.date {
-  padding: 15px;
+.opt {
+  border-style: none;
+  border: 1px solid black;
+  border-radius: 0 0 100px 5px;
+  box-shadow: 0;
 }
-
-.sous_menu:hover .cacher {
-  display: block;
-}
-.cacher {
-  display: none;
+.sous_menu h4 {
+  display: flex;
+  align-items: center;
+  margin: 0;
 }
 
 .border {
-  border-top: solid 1px;
-  margin-right: 25%;
+  border-style: solid;
+  border: 1px;
+  border-color: white;
 }

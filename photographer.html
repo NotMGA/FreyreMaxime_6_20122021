@@ -25,20 +25,20 @@
         <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
         <img id="image_photographe" src="./assets/images/logo.png" alt="1">
       </div>
-      <div class="menu">
-       <h4>Trier par</h4>
       <div class="sous_menu">
-        <select name="" id="">
-          <option >Populaire</option>
-          <option >Date</option>
-          <option >Titre</option>
+       <h4 for ="menu">Trier par</h4>
+        <select name="" class="menu" id="menu">
+          <option class="opt" selected >Populaire</option>
+         
+          <option class="opt" >Date</option>
+         
+          <option class="opt" >Titre</option>
         </select>
         <!-- <div class="pop cacher">Populaire</div>
         <div class="border cacher"></div>
         <div class="date "> Date</div>
         <div class="border cacher"></div>
         <div class="titre cacher"> Titre</div> -->
-      </div>
      </div>
       <div class="media_section"></div>
     </main>
@@ -53,24 +53,33 @@
           <h2 id="contact">Contactez-moi</h2>
           <img src="assets/icons/close.svg" onclick="closeModal()" />
         </header>
-				<form>
+				<form onsubmit="return false">
 					<div>
-						<label >Prénom</label>
-						<input id="prenom_modal" />
+						<label class="label_style" >Prénom</label>
+						<input id="pren" />
+            <label class="erreur" id="erpren"></label>
 					</div>
           <div>
-						<label >Nom</label>
-						<input id="nom_modal" />
+						<label class="label_style" >Nom</label>
+						<input id="nom" />
+            <label class="erreur" id="ernom"></label>
 					</div>
           <div>
-						<label >Email</label>
+						<label class="label_style" >Email</label>
 						<input id="email_modal" />
+            <label class="erreur" id="ermail"></label>
 					</div>
           <div>
-						<label >Votre message</label>
+						<label class="label_style" >Votre message</label>
 						<textarea id="message_modal" rows ="10" cols="100" ></textarea>
+            <label class="erreur" id="ertxt"></label>
 					</div>
-          <button class="contact_button">Envoyer</button>
+          <!-- <input
+                class="contact_button"
+                type="submit"
+                value="Envoyer"
+              />  -->
+          <button class="contact_button env" onclick="finaltest()">Envoyer</button>
 				</form>
         
 			</div>
