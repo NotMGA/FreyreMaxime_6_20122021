@@ -81,33 +81,55 @@ async function select(){
     async function trie(e){
         // recuperation de l'option date 1  populaire 0 titre 2 
         const ind = document.querySelector('select').selectedIndex;
-        let populaire = document.querySelectorAll('article > div > label ');
+        // let populaire = document.querySelectorAll('article > div > label ');
         getPhotographers()
         // console.log(btn.options[0].selected);
         // populaire.sort(function(a,b){return b.value-a.value});
         // for(i=0 ;i<populaire.length;i++){
         //     console.log(populaire[i])
         // }
-        console.log(populaire)
+        // console.log(populaire)
         
-        console.log(ind);
+        // console.log(ind);
+        
     
     if (ind ==0){
-        populaire.sort((a,b)=>b-a);
-        console.log(populaire);
+        mediat.sort(function(a,b){
+            var likesA = a.likes;
+            var likesB = b.likes;
+            return (likesB < likesA) ? -1 : (likesB > likesA) ? 1 : 0;
+        })
+        displaymedia(mediat); // on appel la function d'affichage des médias
 
     }
     if (ind ==2){
-        const jsonn = JSON.stringify (photographer_media);
-        console.log(photographer_media)
-        photographer_media.sort(function(a,b){
-            return b.title-a.title;
-            
+        mediat.sort(function(a,b){
+            var textA = a.title;
+            var textB = b.title;
+            return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
         })
-        console.log(photographer_media);
+        displaymedia(mediat);
+
     }
 
+    if (ind ==1){
+        mediat.sort(function(a,b){
+            var dateA =a.date;
+            var dateB =b.date;
+            return(dateA > dateB) ? -1: (dateA < dateB) ? 1 :0;
+        })
+        displaymedia(mediat);
+    }
+    
+    const inc = document.querySelectorAll(" article > div >button");
+// console.log(inc);
+inc.forEach((btn)=>
+    btn.addEventListener("click",fonc_inc)
+
+)
+
 console.log(e);
+
     } 
 }
 select();
@@ -118,6 +140,11 @@ select();
 
 async function displaymedia(media){
     const mediaSection = document.querySelector(".media_section");
+    
+    //on vide l'affichage si des medias sont affichés afin de ré-afficher les média trié dans le bon ordre
+    while (mediaSection.children.length>0) {
+        mediaSection.removeChild(mediaSection.lastChild)
+        }
     media.forEach(media_id => {
         const mediaModel = mediafactory(media_id);
         const mediaCardDOM = mediaModel.GetUserMedia();

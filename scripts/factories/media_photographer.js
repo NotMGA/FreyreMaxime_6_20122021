@@ -14,6 +14,7 @@ function mediafactory (data){
             video.setAttribute("controls","true");
             source.setAttribute("src",movie);
             source.setAttribute("type","video/mp4");
+            
             a.appendChild(video)
             video.appendChild(source);
             article.appendChild(a);
@@ -24,8 +25,9 @@ function mediafactory (data){
             const img = document.createElement( 'img' ) ;
             const a = document.createElement('a');
             a.href = picture;
-            img.setAttribute("src", picture)
-            a.appendChild(img)
+            img.setAttribute("src", picture);
+            img.setAttribute("alt",title);
+            a.appendChild(img);
             article.appendChild(a);
         }
         const div = document.createElement('div');
