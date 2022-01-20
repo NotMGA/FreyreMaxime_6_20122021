@@ -5,7 +5,7 @@
 .photograph-header {
   background-color: #fafafa;
   height: 300px;
-  margin: 0 100px;
+  margin: 0 2%;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -22,6 +22,11 @@
   background-color: #901c1c;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.contact_button:hover {
+  background-color: #d3573c;
+  color: black;
 }
 
 .modal {
@@ -187,8 +192,8 @@ form textarea {
   background: url(/assets/icons/close.svg) center center / 100% 100% no-repeat
     transparent;
   border: none;
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   position: fixed;
   top: 20px;
   right: 10%;
@@ -217,10 +222,17 @@ form textarea {
   justify-content: center;
   height: 100vh;
   object-fit: cover;
+  flex-direction: column;
 }
 
 .lightbox.show {
   display: initial;
+}
+
+.lightbox_txt {
+  font-size: 24px;
+  color: #911c1c;
+  align-items: unset;
 }
 .show {
   display: initial;
@@ -251,7 +263,7 @@ div label {
   right: 47px;
   display: flex;
   align-items: center;
-  background-color: #b76b6b;
+  background-color: #db8876;
   width: 13em;
   height: 7%;
   font-size: 28px;

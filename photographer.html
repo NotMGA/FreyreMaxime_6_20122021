@@ -15,7 +15,47 @@
       <img src="assets/images/logo.png" class="logo" />
       </a>
     </header>
+    
     <main id="main">
+      <div id="contact_modal"  tabindex="-1">
+        <div class="modal" id="contact-modal">
+          <header>
+            <h2 id="contact">Contactez-moi</h2>
+            <img id="close_contact" src="assets/icons/close.svg" onclick="closeModal()" tabindex="0" />
+          </header>
+          <form onsubmit="return false">
+            <div>
+              <label class="label_style" >Prénom</label>
+              <input id="pren" />
+              <label class="erreur" id="erpren"></label>
+            </div>
+            <div>
+              <label class="label_style" >Nom</label>
+              <input id="nom" />
+              <label class="erreur" id="ernom"></label>
+            </div>
+            <div>
+              <label class="label_style" >Email</label>
+              <input id="email_modal" />
+              <label class="erreur" id="ermail"></label>
+            </div>
+            <div>
+              <label class="label_style" >Votre message</label>
+              <textarea id="message_modal" rows ="10" cols="100" ></textarea>
+              <label class="erreur" id="ertxt"></label>
+            </div>
+            <!-- <input
+                  class="contact_button"
+                  type="submit"
+                  value="Envoyer"
+                />  -->
+            <button class="contact_button env" onclick="finaltest()">Envoyer</button>
+          </form>
+          
+        </div>
+  
+      </div>
+      
       <div class="photograph-header">
         <div id="info_photographe">
           <div id="nom_photographe">nom</div>
@@ -48,44 +88,7 @@
       <div id ="coeur_like"></div>
       <div id="prix">100e</div>
     </div>
-    <div id="contact_modal">
-			<div class="modal">
-				<header>
-          <h2 id="contact">Contactez-moi</h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()" />
-        </header>
-				<form onsubmit="return false">
-					<div>
-						<label class="label_style" >Prénom</label>
-						<input id="pren" />
-            <label class="erreur" id="erpren"></label>
-					</div>
-          <div>
-						<label class="label_style" >Nom</label>
-						<input id="nom" />
-            <label class="erreur" id="ernom"></label>
-					</div>
-          <div>
-						<label class="label_style" >Email</label>
-						<input id="email_modal" />
-            <label class="erreur" id="ermail"></label>
-					</div>
-          <div>
-						<label class="label_style" >Votre message</label>
-						<textarea id="message_modal" rows ="10" cols="100" ></textarea>
-            <label class="erreur" id="ertxt"></label>
-					</div>
-          <!-- <input
-                class="contact_button"
-                type="submit"
-                value="Envoyer"
-              />  -->
-          <button class="contact_button env" onclick="finaltest()">Envoyer</button>
-				</form>
-        
-			</div>
 
-		</div>
     <div class="lightbox ">
       <button class="lightbox_fermer">
       </button>
@@ -96,6 +99,7 @@
       <div class="lightbox_media">
         <video controls ="true"> <source src=""></video>
         <img src="" alt="">
+        <div class="lightbox_txt">test</div>
         
       </div>
     </div>

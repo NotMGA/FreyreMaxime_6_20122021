@@ -26,7 +26,10 @@ prenom("nom");
 email();
 // verification des tests
  if (test ==0)  {
-console.log("ok");
+console.log(document.getElementById("pren").value);
+console.log(document.getElementById("nom").value);
+console.log(document.getElementById("email_modal").value);
+console.log(document.getElementById("message_modal").value);
   }
 }
 
@@ -61,3 +64,20 @@ function email () {
     }
   
   }
+
+  window.addEventListener("keydown", function (event) {
+    if (event.defaultPrevented) {
+      return; // Ne devrait rien faire si l'événement de la touche était déjà consommé.
+    }
+    switch (event.key) {
+      case "Escape":
+        closeModal();
+            
+            break;
+          default:
+            return; // Quitter lorsque cela ne gère pas l'événement touche.
+        }
+      
+        // Annuler l'action par défaut pour éviter qu'elle ne soit traitée deux fois.
+        event.preventDefault();
+      }, true);

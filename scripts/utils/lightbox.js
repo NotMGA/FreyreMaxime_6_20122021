@@ -7,6 +7,8 @@ window.onload = () =>{
     const param = new URLSearchParams(document.location.search);
     const video = lightbox.querySelector(".lightbox_media video");
     const image = lightbox.querySelector(".lightbox_media img");
+    // const titre_medias =document.querySelectorAll("h3"); 
+    const txt_lightbox = document.querySelector(".lightbox_txt")
     const id_photographe = param.get("id");
     // console.log(lien_media);
     
@@ -14,6 +16,9 @@ window.onload = () =>{
         media.addEventListener("click", function(e){
             e.preventDefault();
            let video_image = this.href;
+           let txt_media = this.querySelector("img").alt;
+           txt_lightbox.innerHTML =txt_media;
+           console.log(this);
             if( video_image.includes(".mp4") == true){
                 
                 video.src =this.href;
@@ -54,6 +59,7 @@ window.onload = () =>{
         
         const video = lightbox.querySelector(".lightbox_media video");
         const image = lightbox.querySelector(".lightbox_media img");
+        const txt = lightbox.querySelectorAll(".lightbox_media img").alt;
         const image_actuel = image.src.replace("http://127.0.0.1:5500/assets/photographers/"+id_photographe+"/","");
         
         
@@ -66,6 +72,8 @@ window.onload = () =>{
             if (image_reduit == image_actuel ){
                 i++;
                 const video_image = lien_media[i].href;
+                console.log()
+                txt_lightbox.innerHTML =lien_media[i].querySelector("img").alt;
                 // console.log(video_image.includes(".mp4"))
                 if( video_image.includes(".mp4") == true){
                 
@@ -82,7 +90,7 @@ window.onload = () =>{
                     image.style.display="initial";
                     video.style.display ="none";
                 }
-                console.log(lien_media);
+                // console.log(lien_media);
                 if (i==lien_media.length -1)
                 {
                     document.querySelector(".lightbox_suivant").style.display ="none";
@@ -121,6 +129,7 @@ window.onload = () =>{
             if (image_reduit == image_actuel ){
                 i-1;
                 const video_image = lien_media[i-1].href;
+                txt_lightbox.innerHTML =lien_media[i-1].querySelector("img").alt;
                 if( video_image.includes(".mp4") == true){
                 
                     video.src =lien_media[i-1].href;
@@ -157,7 +166,7 @@ window.onload = () =>{
         // image.src =this.href;
 
     }
-    window.addEventListener("keydown", function (event) {
+    window.addEventListener("keyup", function (event) {
         if (event.defaultPrevented) {
           return; // Ne devrait rien faire si l'événement de la touche était déjà consommé.
         }
@@ -172,10 +181,12 @@ window.onload = () =>{
             // Faire quelque chose pour la touche "right arrow" pressée.
             break;
           case "Escape":
+              console.log("ok")
             lightbox.classList.remove("show");
             // Faire quelque chose pour la touche "esc" pressée.
             break;
           default:
+              console.log("def")
             return; // Quitter lorsque cela ne gère pas l'événement touche.
         }
       
