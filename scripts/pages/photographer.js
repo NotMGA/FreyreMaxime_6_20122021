@@ -57,12 +57,13 @@ function fonc_inc(e){
     target_label.innerHTML = nb_media_like ;
     total_like();
     
-}
+};
 //  fonction du calcule de tout les likes cumuler 
 function total_like (){
     let like_total= document.querySelectorAll('article > div > label');
         let likes = 0;
-        for (let i=0 ; i < like_total.length;i++ ){
+        for (let i=0 ; i < like_total.length;i++ )
+        {
             likes = likes + parseInt( like_total[i].textContent);
             document.getElementById('total_like').innerHTML = likes;
             

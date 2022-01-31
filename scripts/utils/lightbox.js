@@ -59,7 +59,7 @@ window.onload = () =>{
         
         const video = lightbox.querySelector(".lightbox_media video");
         const image = lightbox.querySelector(".lightbox_media img");
-        const txt = lightbox.querySelectorAll(".lightbox_media img").alt;
+        // const txt = lightbox.querySelectorAll(".lightbox_media img").alt;
         const image_actuel = image.src.replace("http://127.0.0.1:5500/assets/photographers/"+id_photographe+"/","");
         
         
