@@ -1,20 +1,22 @@
 // Mettre le code JavaScript lié à la page photographer.html
+
+// recuperation de l'id du photographe
 const photographe_id_url = (new URL(document.location)).searchParams.get('id') ;
 info_photographe (photographe_id_url);
-// const photographe_url = new URL(document.location);
-// const photographe_id_url =photographe_url.searchParams.get('id');
-async function getPhotographers() {
+// recuperation des donnees .Json
+async function getPhotographers() 
+{
     let response = await fetch('https://raw.githubusercontent.com/NotMGA/Front-End-Fisheye/main/data/photographers.json') 
    const  photographers = await response.json();
-    // console.log(photographers);
     return photographers; 
 }
 
- async function info_photographe (id_photographe){
+ async function info_photographe (id_photographe)
+ {
 const photographer_data =await getPhotographers();
 const photographer_profil =photographer_data.photographers;
 const photographer_media =photographer_data.media;
-console.log(photographer_data);
+// fonction pour filtrer les images
 function filtermedia (obj){
     if (obj.photographerId == id_photographe ){
         return true ;
@@ -24,9 +26,8 @@ function filtermedia (obj){
     }
 }
 const mediat = photographer_media.filter(filtermedia);
-console.log(mediat);
-
-for (photographe of photographer_profil){
+// modification de la page des photographe en focntion de leur informations
+for (let photographe of photographer_profil){
     if (photographe.id == id_photographe){
         const info_du_photographe = photographer_profil.find( info => info.id == id_photographe);
         document.getElementById("nom_photographe").innerHTML = info_du_photographe.name ;
@@ -41,59 +42,45 @@ for (photographe of photographer_profil){
 
         
         const inc = document.querySelectorAll(" article > div >button");
-// console.log(inc);
+        // applique la fonction like sur tout les coeurs 
 inc.forEach((btn)=>
     btn.addEventListener("click",fonc_inc)
 
 )
+// fonction incrementation des likes 
 function fonc_inc(e){
     
     const target_parent = e.target.parentElement;
     const target_label = target_parent.querySelector('label');
     console.log(target_label);
-    // console.log(media_like);
-    nb_media_like = parseInt(target_label.textContent)+1;
+    let nb_media_like = parseInt(target_label.textContent)+1;
     target_label.innerHTML = nb_media_like ;
     total_like();
     
-};
+}
+//  fonction du calcule de tout les likes cumuler 
 function total_like (){
-    like_total= document.querySelectorAll('article > div > label');
+    let like_total= document.querySelectorAll('article > div > label');
         let likes = 0;
-        // console.log(test.length)
         for (let i=0 ; i < like_total.length;i++ ){
             likes = likes + parseInt( like_total[i].textContent);
             document.getElementById('total_like').innerHTML = likes;
             
         }
 }
-        
-        
-
     }
 }
 total_like();
+// fonction de trie par populaire / date / titre 
 async function select(){
     const btn = document.querySelector('select')
-    // btn.forEach((cur_option)=>
     btn.addEventListener("change",trie)
-    // )
-    async function trie(e){
+    async function trie(){
         // recuperation de l'option date 1  populaire 0 titre 2 
         const ind = document.querySelector('select').selectedIndex;
-        // let populaire = document.querySelectorAll('article > div > label ');
         getPhotographers()
-        // console.log(btn.options[0].selected);
-        // populaire.sort(function(a,b){return b.value-a.value});
-        // for(i=0 ;i<populaire.length;i++){
-        //     console.log(populaire[i])
-        // }
-        // console.log(populaire)
-        
-        // console.log(ind);
-        
-    
     if (ind ==0){
+        /* trie */
         mediat.sort(function(a,b){
             var likesA = a.likes;
             var likesB = b.likes;
@@ -122,14 +109,10 @@ async function select(){
     }
     
     const inc = document.querySelectorAll(" article > div >button");
-// console.log(inc);
 inc.forEach((btn)=>
     btn.addEventListener("click",fonc_inc)
 
 )
-
-console.log(e);
-
     } 
 }
 select();
@@ -137,7 +120,7 @@ select();
 }
 
 
-
+// affichage des media 
 async function displaymedia(media){
     const mediaSection = document.querySelector(".media_section");
     

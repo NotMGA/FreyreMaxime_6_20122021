@@ -1,4 +1,5 @@
 function photographerFactory(data) {
+    // recuperation des inforamtions
     const { name, portrait , city , country , tagline , price ,id } = data;
 
     const picture = `assets/photographers/Photographers ID Photos/${portrait}`;
@@ -7,6 +8,7 @@ function photographerFactory(data) {
         const article = document.createElement( 'article' );
         const idphotographe = id;
         const a = document.createElement('a');
+        a.setAttribute("aria-label",name +country + tagline + price );
         a.href = "/photographer.html?id="+ idphotographe; 
         const img = document.createElement( 'img' );
         img.setAttribute("src", picture)

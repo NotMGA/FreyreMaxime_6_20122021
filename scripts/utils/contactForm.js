@@ -6,6 +6,7 @@ const env = document.querySelector(".env")
 function displayModal() {
     const modal = document.getElementById("contact_modal");
 	modal.style.display = "block";
+  document.getElementById("close_contact").focus();
 }
 
 function closeModal() {
@@ -14,6 +15,8 @@ function closeModal() {
 }
 
 env.addEventListener("click",finaltest);
+
+
 
 
 var test ;

@@ -1,11 +1,13 @@
-         async function getPhotographers() {
+     async function getPhotographers() 
+    {
+         //  recupertaion des donnees du .Json  avec fetch
         let response = await fetch('https://raw.githubusercontent.com/NotMGA/Front-End-Fisheye/main/data/photographers.json') 
         const photographers = await response.json();
-        console.log(photographers);
         return photographers; 
     }
-
-    async function displayData(photographers) {
+    // fonction pour afficher les donnees des photographes 
+    async function displayData(photographers) 
+    {
         const photographersSection = document.querySelector(".photographer_section");
 
         photographers.forEach((photographer) => {

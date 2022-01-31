@@ -129,13 +129,19 @@ window.onload = () =>{
             if (image_reduit == image_actuel ){
                 i-1;
                 const video_image = lien_media[i-1].href;
-                txt_lightbox.innerHTML =lien_media[i-1].querySelector("img").alt;
                 if( video_image.includes(".mp4") == true){
                 
                     video.src =lien_media[i-1].href;
                     video.style.display="initial";
                     image.style.display ="none";
                     image.src =lien_media[i-1].href;
+                    let txt_lightbox_video = lien_media[i-1].querySelector("source").src ;
+                    txt_lightbox_video = txt_lightbox_video.replace('.mp4','');
+                    txt_lightbox_video = txt_lightbox_video.replace("http://127.0.0.1:5500/assets/photographers/"+id_photographe+"/","");
+                    txt_lightbox_video = txt_lightbox_video.replaceAll('_',' ');
+                    console.log(txt_lightbox_video);
+                    txt_lightbox.innerHTML = txt_lightbox_video;
+
                    
                     
                 }
@@ -144,6 +150,7 @@ window.onload = () =>{
                     image.src =lien_media[i-1].href;
                     image.style.display="initial";
                     video.style.display ="none";
+                    txt_lightbox.innerHTML =lien_media[i-1].querySelector("img").alt;
                 }
                 console.log(i)
                 if (i==1)
