@@ -9,7 +9,7 @@ function photographerFactory(data) {
         const idphotographe = id;
         const a = document.createElement('a');
         a.setAttribute("aria-label",name +country + tagline + price );
-        a.href = "/Front-End-Fisheye/photographer.html?id="+ idphotographe; 
+        a.href = "/photographer.html?id="+ idphotographe; 
         const img = document.createElement( 'img' );
         img.setAttribute("src", picture)
         const h2 = document.createElement( 'h2' );
