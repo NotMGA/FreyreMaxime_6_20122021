@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
   <head>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="css/photographer.css" type="text/css"/>
@@ -12,7 +12,7 @@
   <body>
     <header>
       <a href="/Front-End-Fisheye/index.html">
-      <img src="assets/images/logo.png" class="logo" />
+      <img src="assets/images/logo.png" class="logo" alt="logo" />
       </a>
     </header>
     
@@ -26,22 +26,22 @@
           </header>
           
             <div>
-              <label class="label_style" >Prénom</label>
+              <label class="label_style" for="pren" >Prénom</label>
               <input id="pren" autofocus/>
               <label class="erreur" id="erpren"></label>
             </div>
             <div>
-              <label class="label_style" >Nom</label>
+              <label class="label_style" for="nom" >Nom</label>
               <input id="nom" />
               <label class="erreur" id="ernom"></label>
             </div>
             <div>
-              <label class="label_style" >Email</label>
+              <label class="label_style" for="email_modal" >Email</label>
               <input id="email_modal" />
               <label class="erreur" id="ermail"></label>
             </div>
             <div>
-              <label class="label_style" >Votre message</label>
+              <label class="label_style" for="message_modal" >Votre message</label>
               <textarea id="message_modal" rows ="10" cols="100" ></textarea>
               <label class="erreur" id="ertxt"></label>
             </div>
@@ -64,7 +64,7 @@
           <div id ="phrase_photographe">blablablla</div>
       </div>
         <button class="contact_button" onclick="displayModal()" >Contactez-moi</button>
-        <img id="image_photographe" src="./assets/images/logo.png" alt="1">
+        <img id="image_photographe" src="./assets/images/logo.png" alt="logo">
       </div>
       <div class="sous_menu">
        <h4 for ="menu">Trier par</h4>
