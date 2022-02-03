@@ -34,6 +34,7 @@ console.log("Nom :"+ document.getElementById("nom").value);
 console.log("Email :"+document.getElementById("email_modal").value);
 console.log("Message :"+document.getElementById("message_modal").value);
 closeModal();
+
 document.getElementById("form_contact").reset();
   }
 }
