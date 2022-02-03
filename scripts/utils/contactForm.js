@@ -7,6 +7,9 @@ function displayModal() {
     const modal = document.getElementById("contact_modal");
 	modal.style.display = "block";
   document.getElementById("close_contact").focus();
+  document.getElementById('ermail').innerHTML ="";
+document.getElementById('ernom').innerHTML = '' ; 
+document.getElementById('erpren').innerHTML = '' ; 
 }
 
 function closeModal() {
