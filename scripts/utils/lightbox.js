@@ -19,6 +19,7 @@ window.onload = () =>{
            let txt_media = this.querySelector("img").alt;
            txt_lightbox.innerHTML =txt_media;
            console.log(this);
+           document.getElementsByClassName("lightbox_fermer").focus();
             if( video_image.includes(".mp4") == true){
                 
                 video.src =this.href;
@@ -51,7 +52,7 @@ window.onload = () =>{
     }
     fermer.addEventListener("click",function(){
         lightbox.classList.remove("show");
-        document.getElementByclass("lightbox_fermer").focus();
+        
     });
 
     suivant.addEventListener("click",media_suivant)
@@ -62,7 +63,7 @@ window.onload = () =>{
         const image = lightbox.querySelector(".lightbox_media img");
         // const txt = lightbox.querySelectorAll(".lightbox_media img").alt;
         const image_actuel = image.src.replace("http://127.0.0.1:5500/assets/photographers/"+id_photographe+"/","");
-        document.getElementByclass("lightbox_fermer").focus();
+        document.getElementsByClassName("lightbox_fermer").focus();
         
         
         // console.log( image.src.replace("http://127.0.0.1:5500/assets/photographers/"+id_photographe+"/",""))
@@ -132,7 +133,7 @@ window.onload = () =>{
             if (image_reduit == image_actuel ){
                 i-1;
                 const video_image = lien_media[i-1].href;
-                document.getElementByclass("lightbox_fermer").focus();
+                document.getElementsByClassName("lightbox_fermer").focus();
                 if( video_image.includes(".mp4") == true){
                 
                     video.src =lien_media[i-1].href;

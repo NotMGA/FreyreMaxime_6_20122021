@@ -101,7 +101,7 @@ h1 {
   border-radius: 0 0 100px 5px;
   box-shadow: 0;
 }
-.sous_menu h4 {
+.sous_menu label {
   display: flex;
   align-items: center;
   margin: 0;
