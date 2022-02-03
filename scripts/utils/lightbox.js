@@ -19,11 +19,11 @@ window.onload = () =>{
            let txt_media = this.querySelector("img").alt;
            txt_lightbox.innerHTML =txt_media;
            console.log(this);
-           document.getElementsByClassName("lightbox_fermer").focus();
             if( video_image.includes(".mp4") == true){
                 
                 video.src =this.href;
                 lightbox.classList.add("show");
+                document.getElementsByClassName("lightbox_fermer").focus();
                 video.style.display="initial";
                 image.style.display ="none";
                 document.querySelector(".lightbox_suivant").style.display ="initial";
