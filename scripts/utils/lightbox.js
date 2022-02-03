@@ -79,7 +79,7 @@ window.onload = () =>{
                 i++;
                 const video_image = lien_media[i].href;
                 console.log()
-                txt_lightbox.innerHTML =lien_media[i].querySelector("img").alt;
+                
                 // console.log(video_image.includes(".mp4"))
                 if( video_image.includes(".mp4") == true){
                 
@@ -91,7 +91,7 @@ window.onload = () =>{
                     
                 }
                 else{
-                    
+                    txt_lightbox.innerHTML =lien_media[i].querySelector("img").alt;
                     image.src =lien_media[i].href;
                     image.style.display="initial";
                     video.style.display ="none";

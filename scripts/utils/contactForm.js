@@ -36,6 +36,10 @@ console.log("Message :"+document.getElementById("message_modal").value);
 closeModal();
 
 document.getElementById("form_contact").reset();
+document.getElementById('ermail').innerHTML ="";
+document.getElementById('ernom').innerHTML = '' ; 
+document.getElementById('erpren').innerHTML = '' ; 
+
   }
 }
 
