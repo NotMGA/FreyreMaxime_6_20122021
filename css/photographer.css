@@ -195,7 +195,7 @@ form textarea {
   transform: rotate(180deg);
 }
 
-.lightbox_fermer {
+#lightbox_fermer {
   background: url(/FreyreMaxime_6_20122021/assets/icons/close.svg) center center /
     100% 100% no-repeat transparent;
   border: none;
