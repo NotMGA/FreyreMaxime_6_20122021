@@ -96,7 +96,7 @@
                     video.style.display="initial";
                     image.style.display ="none";
                     image.src =lien_media[i].href;
-                    let txt_lightbox_video = lien_media[i++].querySelector("source").src ;
+                    let txt_lightbox_video = lien_media[i].querySelector("source").src ;
                     txt_lightbox_video = txt_lightbox_video.replace('.mp4','');
                     txt_lightbox_video = txt_lightbox_video.replace("https://notmga.github.io/FreyreMaxime_6_20122021/assets/photographers/"+id_photographe+"/","");
                     txt_lightbox_video = txt_lightbox_video.replaceAll('_',' ');
