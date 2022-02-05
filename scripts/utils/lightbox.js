@@ -1,5 +1,5 @@
 // window.onload = () =>{
-    window.onload = lighbox_t ;
+    // window.onload = lighbox_t ;
     function lighbox_t(){
     const lightbox = document.querySelector(".lightbox");
     const fermer = document.querySelector("#lightbox_fermer");

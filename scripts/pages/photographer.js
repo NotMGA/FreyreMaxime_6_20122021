@@ -135,6 +135,7 @@ function displaymedia(media){
         mediaSection.appendChild(mediaCardDOM);
 
     });
+    lighbox_t();
 }
 
 
