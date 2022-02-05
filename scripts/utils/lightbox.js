@@ -81,13 +81,13 @@
         for (let i =0 ;i< lien_media.length; i++ ){
             const image_reduit = lien_media[i].href.replace("../assets/photographers/"+id_photographe+"/","");
             
-            console.log (image_reduit)
+            // console.log (image_reduit)
             // console.log (image_actuel)
 
             if (image_reduit == image_actuel ){
                 i++;
                 const video_image = lien_media[i].href;
-                console.log()
+                // console.log()
                 
                 // console.log(video_image.includes(".mp4"))
                 if( video_image.includes(".mp4") == true){
@@ -96,7 +96,7 @@
                     video.style.display="initial";
                     image.style.display ="none";
                     image.src =lien_media[i].href;
-                    let txt_lightbox_video = lien_media[i-1].querySelector("source").src ;
+                    let txt_lightbox_video = lien_media[i++].querySelector("source").src ;
                     txt_lightbox_video = txt_lightbox_video.replace('.mp4','');
                     txt_lightbox_video = txt_lightbox_video.replace("https://notmga.github.io/FreyreMaxime_6_20122021/assets/photographers/"+id_photographe+"/","");
                     txt_lightbox_video = txt_lightbox_video.replaceAll('_',' ');
@@ -134,9 +134,6 @@
     }
     prec.addEventListener("click",media_prec);
         function media_prec(){
-
-        
-        
         const image = lightbox.querySelector(".lightbox_media img");
         const video = lightbox.querySelector(".lightbox_media video");
         const image_actuel = image.src.replace("../assets/photographers/"+id_photographe+"/","");
