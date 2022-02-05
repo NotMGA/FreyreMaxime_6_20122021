@@ -122,7 +122,7 @@ inc.forEach((btn)=>
 
 
 // affichage des media 
-async function displaymedia(media){
+function displaymedia(media){
     const mediaSection = document.querySelector(".media_section");
     
     //on vide l'affichage si des medias sont affichés afin de ré-afficher les média trié dans le bon ordre
