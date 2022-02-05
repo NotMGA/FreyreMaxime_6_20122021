@@ -10,8 +10,9 @@ window.onload = () =>{
     // const titre_medias =document.querySelectorAll("h3"); 
     const txt_lightbox = document.querySelector(".lightbox_txt")
     const id_photographe = param.get("id");
-    // console.log(lien_media);
+    console.log("fin load");
     
+    // console.log(lien_media);
     for (let media of lien_media){
         media.addEventListener("click", function(e){
             e.preventDefault();
@@ -213,8 +214,8 @@ window.onload = () =>{
         // Annuler l'action par défaut pour éviter qu'elle ne soit traitée deux fois.
         event.preventDefault();
       }, true);
-    
-}
+    }
+
 
 
 
