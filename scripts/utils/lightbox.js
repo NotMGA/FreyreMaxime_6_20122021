@@ -69,7 +69,7 @@
     suivant.addEventListener("click",media_suivant)
         function media_suivant(){
 
-        
+        const lien_media =document.querySelectorAll("article a");
         const video = lightbox.querySelector(".lightbox_media video");
         const image = lightbox.querySelector(".lightbox_media img");
         // const txt = lightbox.querySelectorAll(".lightbox_media img").alt;
@@ -134,6 +134,7 @@
     }
     prec.addEventListener("click",media_prec);
         function media_prec(){
+            const lien_media =document.querySelectorAll("article a");
         const image = lightbox.querySelector(".lightbox_media img");
         const video = lightbox.querySelector(".lightbox_media video");
         const image_actuel = image.src.replace("../assets/photographers/"+id_photographe+"/","");
