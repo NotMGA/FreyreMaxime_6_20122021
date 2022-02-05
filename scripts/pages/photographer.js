@@ -6,7 +6,7 @@ info_photographe (photographe_id_url);
 // recuperation des donnees .Json
 async function getPhotographers() 
 {
-    let response = await fetch('https://raw.githubusercontent.com/NotMGA/Front-End-Fisheye/main/data/photographers.json') 
+    let response = await fetch('../data/photographers.json') 
    const  photographers = await response.json();
     return photographers; 
 }
@@ -25,6 +25,7 @@ function filtermedia (obj){
         return false ;
     }
 }
+select();
 const mediat = photographer_media.filter(filtermedia);
 // modification de la page des photographe en focntion de leur informations
 for (let photographe of photographer_profil){
@@ -116,7 +117,6 @@ inc.forEach((btn)=>
 )
     } 
 }
-select();
 
 }
 

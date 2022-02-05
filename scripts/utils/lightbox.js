@@ -64,13 +64,13 @@ window.onload = () =>{
         const video = lightbox.querySelector(".lightbox_media video");
         const image = lightbox.querySelector(".lightbox_media img");
         // const txt = lightbox.querySelectorAll(".lightbox_media img").alt;
-        const image_actuel = image.src.replace("http://127.0.0.1:5500/assets/photographers/"+id_photographe+"/","");
+        const image_actuel = image.src.replace("../assets/photographers/"+id_photographe+"/","");
         document.getElementById("lightbox_fermer").focus();
         
         
         // console.log( image.src.replace("http://127.0.0.1:5500/assets/photographers/"+id_photographe+"/",""))
         for (let i =0 ;i< lien_media.length; i++ ){
-            const image_reduit = lien_media[i].href.replace("http://127.0.0.1:5500/assets/photographers/"+id_photographe+"/","");
+            const image_reduit = lien_media[i].href.replace("../assets/photographers/"+id_photographe+"/","");
             
             // console.log (image_reduit)
             // console.log (image_actuel)
@@ -124,12 +124,12 @@ window.onload = () =>{
         
         const image = lightbox.querySelector(".lightbox_media img");
         const video = lightbox.querySelector(".lightbox_media video");
-        const image_actuel = image.src.replace("http://127.0.0.1:5500/assets/photographers/"+id_photographe+"/","");
+        const image_actuel = image.src.replace("../assets/photographers/"+id_photographe+"/","");
         
         
         // console.log( image.src.replace("http://127.0.0.1:5500/assets/photographers/"+id_photographe+"/",""))
         for (let i =0 ;i< lien_media.length; i++ ){
-            const image_reduit = lien_media[i].href.replace("http://127.0.0.1:5500/assets/photographers/"+id_photographe+"/","");
+            const image_reduit = lien_media[i].href.replace("../assets/photographers/"+id_photographe+"/","");
             // console.log (image_reduit)
             // console.log (image_actuel)
             if (image_reduit == image_actuel ){
@@ -144,7 +144,7 @@ window.onload = () =>{
                     image.src =lien_media[i-1].href;
                     let txt_lightbox_video = lien_media[i-1].querySelector("source").src ;
                     txt_lightbox_video = txt_lightbox_video.replace('.mp4','');
-                    txt_lightbox_video = txt_lightbox_video.replace("https://notmga.github.io/FreyreMaxime_6_20122021/assets/photographers/"+id_photographe+"/","");
+                    txt_lightbox_video = txt_lightbox_video.replace("../assets/photographers/"+id_photographe+"/","");
                     txt_lightbox_video = txt_lightbox_video.replaceAll('_',' ');
                     console.log(txt_lightbox_video);
                     txt_lightbox.innerHTML = txt_lightbox_video;
