@@ -26,7 +26,7 @@ window.onload = () =>{
                 video.style.display="initial";
                 image.style.display ="none";
                 document.querySelector(".lightbox_suivant").style.display ="initial";
-                    document.querySelector(".lightbox_precedent").style.display ="initial";
+                document.querySelector(".lightbox_precedent").style.display ="initial";
                
                 
             }
@@ -38,9 +38,9 @@ window.onload = () =>{
                 image.style.display="initial";
                 video.style.display ="none";
                 document.querySelector(".lightbox_suivant").style.display ="initial";
-                    document.querySelector(".lightbox_precedent").style.display ="initial";
-                    let txt_media = this.querySelector("img").alt;
-           txt_lightbox.innerHTML =txt_media;
+                document.querySelector(".lightbox_precedent").style.display ="initial";
+                let txt_media = this.querySelector("img").alt;
+                txt_lightbox.innerHTML =txt_media;
             }
            
             
