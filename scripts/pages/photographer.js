@@ -6,7 +6,7 @@ info_photographe (photographe_id_url);
 // recuperation des donnees .Json
 async function getPhotographers() 
 {
-    let response = await fetch('../data/photographers.json') 
+    let response = await fetch('https://raw.githubusercontent.com/NotMGA/Front-End-Fisheye/main/data/photographers.json') 
    const  photographers = await response.json();
     return photographers; 
 }
