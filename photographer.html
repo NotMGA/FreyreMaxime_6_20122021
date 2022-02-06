@@ -6,7 +6,6 @@
     <meta charset="utf-8">
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
-    <!-- <script src="../scripts/utils/lightbox.js" ></script> -->
     <title>Fisheye - photographe </title>
   </head>
   <body>
@@ -19,11 +18,11 @@
     <main id="main">
       <div id="contact_modal" >
         <form id="form_contact" onsubmit="return false">
-        <div class="modal" id="contact-modal">
-          <header>
-            <h2 id="contact">Contactez-moi</h2>
-            <button id="close_contact" onclick="closeModal()" >
-          </header>
+          <div class="modal" id="contact-modal">
+            <header>
+              <h2 id="contact">Contactez-moi</h2>
+              <button id="close_contact" onclick="closeModal()" ></button> 
+            </header>
           
             <div>
               <label class="label_style" for="pren" >Prénom</label>
@@ -45,17 +44,12 @@
               <textarea id="message_modal" rows ="10" cols="100" ></textarea>
               <label class="erreur" id="ertxt"></label>
             </div>
-            <!-- <input
-                  class="contact_button"
-                  type="submit"
-                  value="Envoyer"
-                />  -->
             <button class="contact_button env" onclick="finaltest()">Envoyer</button>
-          </form>
+          </div>
+        </form>
           
-        </div>
-  
       </div>
+  
       
       <div class="photograph-header">
         <div id="info_photographe">
@@ -68,7 +62,7 @@
       </div>
       <div class="sous_menu">
        <label for ="menu">Trier par</label>
-        <select name="" class="menu" id="menu">
+        <select  class="menu" id="menu">
           <option class="opt" selected >Populaire</option>
          
           <option class="opt" >Date</option>
@@ -76,11 +70,7 @@
          
           <option class="opt" >Titre</option>
         </select>
-        <!-- <div class="pop cacher">Populaire</div>
-        <div class="border cacher"></div>
-        <div class="date "> Date</div>
-        <div class="border cacher"></div>
-        <div class="titre cacher"> Titre</div> -->
+
      </div>
       <div class="media_section"></div>
     </main>
@@ -98,7 +88,7 @@
       <button class="lightbox_precedent">
       </button>
       <div class="lightbox_media">
-        <video controls ="true"> <source src=""></video>
+        <video > <source src=""></video>
         <img src="" alt="">
         <div class="lightbox_txt">test</div>
         

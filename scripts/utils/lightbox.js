@@ -29,7 +29,7 @@
                 image.style.display ="none";
                 document.querySelector(".lightbox_suivant").style.display ="initial";
                 document.querySelector(".lightbox_precedent").style.display ="initial";
-                let txt_lightbox_video = lien_media[i-1].querySelector("source").src ;
+                let txt_lightbox_video = this.href;
                 txt_lightbox_video = txt_lightbox_video.replace('.mp4','');
                 txt_lightbox_video = txt_lightbox_video.replace("https://notmga.github.io/FreyreMaxime_6_20122021/assets/photographers/"+id_photographe+"/","");
                 txt_lightbox_video = txt_lightbox_video.replaceAll('_',' ');

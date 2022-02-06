@@ -19,7 +19,7 @@ function photographerFactory(data) {
         const text_tagline = document.createElement ('tagline');
         text_tagline.textContent = tagline;
         const prix = document.createElement ('prix');
-        prix.textContent = price+ "/Jours";
+        prix.textContent = price+ "€/Jours";
         article.appendChild(a);
         a.appendChild(img);
         a.appendChild(h2);

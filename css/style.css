@@ -99,7 +99,7 @@ h1 {
   border-style: none;
   border: 1px solid black;
   border-radius: 0 0 100px 5px;
-  box-shadow: 0;
+  /* box-shadow: 0; */
 }
 .sous_menu label {
   display: flex;
